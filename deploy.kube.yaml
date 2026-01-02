@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evevolved-fe-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eveolved-fe
+  template:
+    metadata:
+      labels:
+        app: eveolved-fe
+    spec:
+      containers:
+        - name: evevolved-fe
+          image: ariagoddess/evevolved:latest
+          ports:
+            - containerPort: 80
