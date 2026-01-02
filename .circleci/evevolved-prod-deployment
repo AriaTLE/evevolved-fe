@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    circleci.com/project-id: {{ your-project-ID }}
+  labels:
+    circleci.com/component-name: evevolved-prod-deployment
+    circleci.com/version: 1.0.0
+  name: evevolved-prod-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      ...
+  template:
+    metadata:
+      labels:
+        ...
+        circleci.com/component-name: evevolved-prod-deployment
+        circleci.com/version: 1.0.0
